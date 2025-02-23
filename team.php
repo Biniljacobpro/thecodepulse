@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://unpkg.com/scrollreveal"></script>
     <style>
+        body {
+            background: white;
+            color: black;
+        }
         .team-section {
-            background: linear-gradient(135deg, #1f1c2c, #928dab);
-            color: white;
             padding: 80px 0;
             text-align: center;
         }
@@ -23,14 +25,14 @@
             gap: 30px;
         }
         .team-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.05);
             border-radius: 15px;
             padding: 20px;
             text-align: center;
             width: 280px;
             transition: transform 0.3s;
             cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
         .team-card:hover {
             transform: scale(1.05);
