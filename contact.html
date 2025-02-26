@@ -32,20 +32,30 @@
             background: rgba(0, 0, 0, 0.05);
             color: #333;
             border: 1px solid #ccc;
+            transition: all 0.3s ease-in-out;
+        }
+        .form-control:focus {
+            border-color: #007BFF;
+            box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
         }
         .form-control::placeholder {
             color: #666;
         }
         .btn-custom {
-            background-color: #ff7eb3;
+            background-color: #007BFF;
             border: none;
             color: white;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+            padding: 12px;
         }
         .btn-custom:hover {
-            background-color: #ff5277;
+            background-color: #0056b3;
+            box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.7);
+            transform: scale(1.05);
         }
     </style>
-    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
