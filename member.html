@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Member Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">The Code Pulse</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="team.html">Team Members</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5 text-center">
+        <div id="profile-content">
+            <p class="text-danger">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 The Code Pulse. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Member Data
+        const members = {
+            "Binil Jacob": { 
+                image: "binil.jpg", 
+                role: "Team Lead", 
+                skills: "Project Management, Backend Development, Leadership, Flutter",
+                linkedin: "https://linkedin.com/in/biniljacob",
+                github: "https://github.com/biniljacobpro"
+            },
+            "ALEENA RAICHEL ABEY": { 
+                image: "aleena.jpg", 
+                role: "Team Member", 
+                skills: "Frontend Development, UI/UX Design",
+                linkedin: "https://linkedin.com/in/aleenaabey",
+                github: "https://github.com/aleenaabey"
+            },
+            "AMY MARIYA VB": { 
+                image: "amy.jpg", 
+                role: "Team Member", 
+                skills: "Database Management, PHP Development",
+                linkedin: "https://linkedin.com/in/amymariya",
+                github: "https://github.com/amymariya"
+            },
+            "ANSU MARIA BENNY": { 
+                image: "ansu.jpg", 
+                role: "Team Member", 
+                skills: "JavaScript, React, API Integration"
+            },
+            "JOMY GEORGE": { 
+                image: "jomy.jpg", 
+                role: "Team Member", 
+                skills: "Python, Machine Learning, Data Analysis",
+                linkedin: "https://linkedin.com/in/jomygeorge",
+                github: "https://github.com/jomygeorge"
+            },
+            "MILAN SONY": { 
+                image: "milan.jpg", 
+                role: "Team Member", 
+                skills: "Cybersecurity, Ethical Hacking"
+            },
+            "REJITH RAJ": { 
+                image: "rejith.jpg", 
+                role: "Team Member", 
+                skills: "Cloud Computing, DevOps",
+                linkedin: "https://linkedin.com/in/rejithraj",
+                github: "https://github.com/rejithraj"
+            },
+            "SHIBIN SAJI": { 
+                image: "shibin.jpg", 
+                role: "Team Member", 
+                skills: "Mobile App Development"
+            }
+        };
+
+        // Get URL Parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get("name");
+
+        // Get Profile Content Div
+        const profileContent = document.getElementById("profile-content");
+
+        // Display Member Info
+        if (name && members[name]) {
+            const member = members[name];
+            profileContent.innerHTML = `
+                <div class="card mx-auto" style="max-width: 400px;">
+                    <img src="images/${member.image}" class="card-img-top" alt="${name}">
+                    <div class="card-body">
+                        <h3 class="card-title">${name}</h3>
+                        <h5 class="text-muted">Role: ${member.role}</h5>
+                        <p><strong>Skills:</strong> ${member.skills}</p>
+                        <div class="social-links">
+                            ${member.linkedin ? `<a href="${member.linkedin}" target="_blank" class="btn btn-primary mx-2"><i class="fab fa-linkedin"></i></a>` : ""}
+                            ${member.github ? `<a href="${member.github}" target="_blank" class="btn btn-dark mx-2"><i class="fab fa-github"></i></a>` : ""}
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            profileContent.innerHTML = `<p class="text-danger">Member not found.</p>`;
+        }
+    </script>
+</body>
+</html>
